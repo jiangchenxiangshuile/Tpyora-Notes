@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航下拉菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav {
+        width: 600px;
+        margin: 80px auto;
+        color: #333;
+        border-radius: 6px;
+        height: 50px;
+        border: 1px solid #666;
+        }
+
+        .nav li {
+            width: 140px;
+            height: 50px;
+            line-height: 50px;
+            /* background: #17adf3; */
+            float: left;
+            text-align: center;
+            /* margin-left: 10px; */
+            cursor: pointer;
+            _display: inline;
+            position: relative;
+        }
+
+        li ul {
+            position: absolute;
+            left: 0;
+            top: 50px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li id="phone">
+            <span>最热手机</span>
+            <ul id="ul01">
+                <li>小米10 pro</li>
+                <li>华为 P40 Pro+</li>
+                <li>三星S21 edge</li>
+            </ul>
+        </li>
+        <li id="home">
+            <span>家用商品</span>
+            <ul id="ul02">
+                <li>智能电饭煲</li>
+                <li>微波炉</li>
+                <li>电水壶</li>
+            </ul>
+        </li>
+        <li id="outer">
+            <span>户外产品</span>
+            <ul id="ul03">
+                <li>登山鞋</li>
+                <li>冲锋衣</li>
+                <li>智能手表</li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+
+</html>
+
+<script>
+    function fn(canshu1, canshu2) {
+        var li01 = document.getElementById(canshu1);
+        var ul01 = document.getElementById(canshu2);
+
+        li01.onmouseover = function () {
+            ul01.style.display = "block"
+        }
+        li01.onmouseout = function () {
+            ul01.style.display = "none"
+        }
+    }
+    fn("phone", "ul01")
+    fn("home", "ul02")
+    fn("outer", "ul03")
+
+</script>
